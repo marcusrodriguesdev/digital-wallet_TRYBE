@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { useContext, useState } from 'react';
-import Input from '../../components/Input';
+import Input from '../../components/InputsForm/Input';
 import WalletContext from '../../context/WalletContext';
 
 export default function Login({ history }) {
