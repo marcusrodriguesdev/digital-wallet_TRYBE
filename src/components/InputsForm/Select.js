@@ -1,36 +1,39 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-// import { Container } from './styles';
+export default function Select({
+  name, id, option, onChange, text,
+}) {
+  function globalOption() {
+    if (option) {
+      const options = option.map((info) => (
+        <option value={info}>
+          {info}
+        </option>
+      ));
+      return options;
+    }
+    return '';
+  }
 
-function Select(
-  {
-    option, name, text,
-  },
-) {
   return (
     <label htmlFor={name}>
       {text}
-      <select>
-        {option.map((item) => (
-          <option
-            key={item}
-            value={item}
-          >
-            {item}
-          </option>
-        ))}
+      <select
+        name={name}
+        id={id}
+        onChange={onChange}
+      >
+        { globalOption() }
       </select>
     </label>
   );
 }
 
 Select.propTypes = {
+  id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  option: PropTypes.shape({
-    map: PropTypes.func,
-  }).isRequired,
+  onChange: PropTypes.func.isRequired,
+  option: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
 };
-
-export default Select;
