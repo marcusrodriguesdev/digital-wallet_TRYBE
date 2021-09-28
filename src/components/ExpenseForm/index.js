@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import WalletContext from '../../context/WalletContext';
 import Input from '../InputsForm/Input';
 import Select from '../InputsForm/Select';
 
@@ -12,6 +13,9 @@ function ExpenseForm() {
   const [description, setDescription] = useState('');
   const [method, setMethod] = useState('');
   const [tag, setTag] = useState('');
+  const [coin, setCoin] = useState('');
+
+  const { apiCoins } = useContext(WalletContext);
 
   return (
     <div>
@@ -34,6 +38,9 @@ function ExpenseForm() {
       <Select
         text="Moeda"
         name="coin"
+        option={apiCoins}
+        value={coin}
+        onChange={({ target }) => setCoin(target.value)}
       />
       <Select
         text="Método de pagamento"
@@ -49,6 +56,11 @@ function ExpenseForm() {
         option={tags}
         onChange={({ target }) => setTag(target.value)}
       />
+      <button
+        type="button"
+      >
+        Adicionar Despesa
+      </button>
     </div>
   );
 }
