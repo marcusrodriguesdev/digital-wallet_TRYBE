@@ -3,8 +3,6 @@ import WalletContext from '../../context/WalletContext';
 import Input from '../InputsForm/Input';
 import Select from '../InputsForm/Select';
 
-// import { Container } from './styles';
-
 function ExpenseForm() {
   const methods = ['Dinheiro', 'Cartão de crédito', 'Cartão de débito'];
   const tags = ['Lazer', 'Trabalho', 'Transporte', 'Saúde'];
