@@ -30,13 +30,14 @@ export default function WalletProvider({ children }) {
   }, []);
 
   function getExpenseForm(
-    value, description, coin, method, tag,
+    id, value, description, coin, method, tag,
   ) {
     setForm({
       ...form,
       expense: [
         ...form.expense,
         {
+          id,
           value,
           description,
           coin,

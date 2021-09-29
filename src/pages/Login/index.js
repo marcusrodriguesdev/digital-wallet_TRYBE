@@ -23,6 +23,7 @@ export default function Login({ history }) {
   function submitLogin() {
     localStorage.setItem('user', JSON.stringify({ email }));
     history.push('/carteira');
+    localStorage.setItem('exchangeRates', JSON.stringify([]));
   }
 
   return (
