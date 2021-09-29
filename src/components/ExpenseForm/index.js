@@ -10,18 +10,19 @@ function ExpenseForm() {
   const tags = ['Lazer', 'Trabalho', 'Transporte', 'Saúde'];
 
   const [value, setValue] = useState('');
+  const [id, setId] = useState(0);
   const [description, setDescription] = useState('');
   const [method, setMethod] = useState('');
   const [tag, setTag] = useState('');
   const [coin, setCoin] = useState('');
 
-  const { apiCoins } = useContext(WalletContext);
+  const { apiCoins, getExpenseForm } = useContext(WalletContext);
 
   return (
     <div>
       <Input
         text="Valor"
-        type="text"
+        type="number"
         id="valor"
         name="name"
         value={value}
@@ -58,6 +59,10 @@ function ExpenseForm() {
       />
       <button
         type="button"
+        onClick={() => {
+          setId(id + 1);
+          getExpenseForm(value, description, coin, method, tag);
+        }}
       >
         Adicionar Despesa
       </button>

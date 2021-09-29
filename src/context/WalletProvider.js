@@ -6,6 +6,10 @@ import getCoins from '../services/index';
 export default function WalletProvider({ children }) {
   const [email, setEmail] = useState('');
   const [apiCoins, setApiCoins] = useState([]);
+  const [infoCoin, setInfoCoin] = useState([]);
+  const [form, setForm] = useState({
+    expense: [],
+  });
 
   useEffect(() => {
     async function requestApi() {
@@ -17,10 +21,40 @@ export default function WalletProvider({ children }) {
     requestApi();
   }, []);
 
+  useEffect(() => {
+    async function requestApi() {
+      const exchangeRates = await getCoins();
+      setInfoCoin(exchangeRates);
+    }
+    requestApi();
+  }, []);
+
+  function getExpenseForm(
+    value, description, coin, method, tag,
+  ) {
+    setForm({
+      ...form,
+      expense: [
+        ...form.expense,
+        {
+          value,
+          description,
+          coin,
+          method,
+          tag,
+          infoCoin,
+        },
+      ],
+    });
+  }
+
   const context = {
     email,
     setEmail,
     apiCoins,
+    infoCoin,
+    getExpenseForm,
+    form,
   };
 
   return (
