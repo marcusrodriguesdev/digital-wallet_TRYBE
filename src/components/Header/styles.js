@@ -8,10 +8,14 @@ const Container = styled.header`
   flex-direction: row;
   justify-content: space-around;
   height: 65px;
-  background: #252422;
+  background: #fff;
   font-size: 17px;
-  color: white;
+  color: black;
   font-weight: 500;
+
+  .Title {
+    display: flex;
+  }
 
   .icon {
     margin-top: 5px;

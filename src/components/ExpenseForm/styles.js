@@ -8,7 +8,7 @@ export const Container = styled.div`
   height: 55px;
   font-size: 17px;
   color: white;
-  background: #403d39;
+  background: #252422;
   /* padding: 18px; */
   padding-left: 60px;
 

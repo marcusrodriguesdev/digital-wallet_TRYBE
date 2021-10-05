@@ -20,8 +20,8 @@ function Header() {
 
   return (
     <Container>
-      <div>
-        <span>Digital Wallet</span>
+      <div className="Title">
+        <h3>Digital Wallet</h3>
         <GiWallet size={20} color="#6ede8a" className="icon" />
       </div>
       <div>

@@ -1,7 +1,9 @@
 import React, { useContext } from 'react';
 import WalletContext from '../../context/WalletContext';
 
-import { HeaderTable, BodyTable } from './styles';
+import {
+  BodyTable, TableHeader, Container,
+} from './styles';
 
 function TableExpense() {
   const { form: { expense } } = useContext(WalletContext);
@@ -11,22 +13,26 @@ function TableExpense() {
   ];
 
   return (
-    <table>
-      <thead>
+    <Container>
+      <TableHeader>
         <tr>
           { fields.map((items) => (
-            <HeaderTable key={items}>
-              { items }
-            </HeaderTable>
+            <div>
+              <span key={items}>
+                { items }
+              </span>
+            </div>
           )) }
-          <th>Editar/Excluir</th>
+          <div>
+            <span>Editar/Excluir</span>
+          </div>
         </tr>
-      </thead>
-      <tbody>
+      </TableHeader>
+      <BodyTable>
         { expense.map(({
           id, coin, description, method, tag, value, infoCoin,
         }) => (
-          <BodyTable key={id}>
+          <tr key={id}>
             <td>{value}</td>
             <td>{description}</td>
             <td>{infoCoin[coin].name.split('/', 1)}</td>
@@ -35,10 +41,10 @@ function TableExpense() {
             <td>{parseFloat(infoCoin[coin].ask).toFixed(2)}</td>
             <td>{(infoCoin[coin].ask * value).toFixed(2)}</td>
             <td>Real</td>
-          </BodyTable>
+          </tr>
         )) }
-      </tbody>
-    </table>
+      </BodyTable>
+    </Container>
   );
 }
 
