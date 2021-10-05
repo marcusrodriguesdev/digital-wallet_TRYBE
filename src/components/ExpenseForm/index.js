@@ -34,7 +34,7 @@ function ExpenseForm() {
   return (
     <Container>
       <Input
-        text="Valor"
+        text="Valor:"
         type="number"
         className="Input"
         id="valor"
@@ -48,7 +48,7 @@ function ExpenseForm() {
       <Input
         className="Input Description"
         type="text"
-        text="Descrição"
+        text="Descrição:"
         value={description}
         id="description"
         name="description"
@@ -59,7 +59,7 @@ function ExpenseForm() {
       />
       <Select
         className="Select"
-        text="Moeda"
+        text="Moeda:"
         name="coin"
         option={apiCoins}
         value={coin}
@@ -67,7 +67,7 @@ function ExpenseForm() {
       />
       <Select
         className="Select"
-        text="Método de pagamento"
+        text="Método de pagamento:"
         name="method"
         option={methods}
         value={method}
@@ -75,7 +75,7 @@ function ExpenseForm() {
       />
       <Select
         className="Select"
-        text="Tag"
+        text="Tag:"
         name="tag"
         value={tag}
         option={tags}

@@ -14,7 +14,8 @@ export const Container = styled.div`
 
   .Input {
     margin-right: 15px;
-    border: 1px solid #606060;
+    border: none;
+    border-radius: 4px;
     margin-left: 5px;
     height: 25px;
     width: 70px;
@@ -31,10 +32,12 @@ export const Container = styled.div`
 
   .Select {
     margin-right: 15px;
+    font-size: 14px;
     margin-left: 5px;
     border: none;
     height: 25px;
     background: #fff;
+    border-radius: 4px;
   }
 `;
 
@@ -43,7 +46,7 @@ export const Button = styled.div`
     margin-left: 15px;
     color: white;
     cursor: pointer;
-    background: ${({ checkValue }) => checkValue ? '#023e7d' : '#0466c8'};
+    background: ${({ checkValue }) => checkValue ? '#155d27' : '#6ede8a'};
     font-weight: 600;
     height: 30px;
     width: 160px;

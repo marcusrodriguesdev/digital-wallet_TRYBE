@@ -8,7 +8,6 @@ function TableExpense() {
 
   const fields = ['Valor', 'Descrição', 'Moeda', 'Método de pagamento',
     'Tag', 'Câmbio utilizado', 'Valor convertido', 'Moeda de conversão',
-    'Editar/Excluir',
   ];
 
   return (
@@ -20,6 +19,7 @@ function TableExpense() {
               { items }
             </HeaderTable>
           )) }
+          <th>Editar/Excluir</th>
         </tr>
       </thead>
       <tbody>

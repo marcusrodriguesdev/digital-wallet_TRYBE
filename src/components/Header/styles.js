@@ -6,12 +6,17 @@ const Container = styled.header`
   align-items: center;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
   height: 65px;
   background: #252422;
   font-size: 17px;
   color: white;
   font-weight: 500;
+
+  .icon {
+    margin-top: 5px;
+    margin-left: 10px;
+  }
 `;
 
 export default Container;
