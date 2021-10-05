@@ -12,7 +12,7 @@ export default function Login({ history }) {
   const [password, setPassword] = useState('');
   const [validated, setValidated] = useState(true);
 
-  function checkPassword() {
+  function checkPasswordAndEmail() {
     const regexEmail = /\S+@\S+\.\S+/;
     const check = regexEmail.test(email);
     if (password.length >= 6 && check) {
@@ -41,7 +41,7 @@ export default function Login({ history }) {
           id="email"
           onChange={({ target }) => {
             setEmail(target.value);
-            checkPassword();
+            checkPasswordAndEmail();
           }}
           placeholder="Digite seu email"
         />
@@ -54,7 +54,7 @@ export default function Login({ history }) {
           value={password}
           onChange={({ target: { value } }) => {
             setPassword(value);
-            checkPassword();
+            checkPasswordAndEmail();
           }}
         />
         <ContainerButton

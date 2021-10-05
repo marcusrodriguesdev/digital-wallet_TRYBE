@@ -20,13 +20,10 @@ function Header() {
   return (
     <Container>
       <div>
-        <span>{email}</span>
+        <span>{ `Email: ${email}` }</span>
       </div>
       <div>
-        <span>{ total() }</span>
-      </div>
-      <div>
-        <span>BRL</span>
+        <span>{ `Despesa Total: R$ ${total()} BRL` }</span>
       </div>
     </Container>
   );
