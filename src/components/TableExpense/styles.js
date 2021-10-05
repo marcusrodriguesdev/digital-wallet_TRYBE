@@ -6,30 +6,39 @@ export const Container = styled.table`
   font-size: 17px;
   display: flex;
   flex-direction: column;
-  height: 80vh;
-  background: #fff;
-`;
-
-export const TableHeader = styled.thead`
-  height: 50px;
-  font-weight: 600;
-  display: flex;
-  width: 100%;
-  color: white;
-  /* margin-left: 73px; */
-  background: #403d39; 
-  align-items: center;
+  margin: 0;
+  border-spacing: 0;
 
   tr {
-    display: flex;
-    margin-left: 37px;
+    border-spacing: 0;
   }
 
-  div {
-    margin: 20px;
+  th {
+    width: 10%;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background: #403d39; 
+  }
+
+  td {
+    font-size: 16px;
+    width: 10%;
+    border-spacing: 0;
+    /* border: 1px solid black; */
+    padding: 10px 20px;
+    text-align: center;
+    color: black;
   }
 `;
 
-export const BodyTable = styled.tbody`
-  background: #fffcf2;
+export const Button = styled.button`
+  cursor: pointer;
+  height: 30px;
+  border-radius: 3px;
+  width: 90px;
+  border: none;
+  background: #e5383b;
+  color: white;
 `;

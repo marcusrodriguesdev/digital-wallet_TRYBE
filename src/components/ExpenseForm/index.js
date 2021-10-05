@@ -21,7 +21,7 @@ function ExpenseForm() {
   } = useContext(WalletContext);
 
   function validateButton() {
-    if (value !== 0) {
+    if (value !== 0 || description !== '') {
       setCheckValue(false);
     } else { setCheckValue(true); }
   }
