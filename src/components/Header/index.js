@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { GiWallet } from 'react-icons/gi';
 import WalletContext from '../../context/WalletContext';
 
 import Container from './styles';
@@ -19,14 +20,15 @@ function Header() {
 
   return (
     <Container>
-      <div>
-        <span>{email}</span>
+      <div className="Title">
+        <h3>Digital Wallet</h3>
+        <GiWallet size={20} color="#6ede8a" className="icon" />
       </div>
       <div>
-        <span>{ total() }</span>
+        <span>{ `Email: ${email}` }</span>
       </div>
       <div>
-        <span>BRL</span>
+        <span>{ `Despesa Total: R$ ${total()} BRL` }</span>
       </div>
     </Container>
   );
