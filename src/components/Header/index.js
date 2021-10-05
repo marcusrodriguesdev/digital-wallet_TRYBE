@@ -9,10 +9,10 @@ function Header() {
   const { form: { expense } } = useContext(WalletContext);
 
   const total = () => {
-    const reduceExpense = expense.reduce((acc, curr) => {
-      const subTotal = curr.value * curr.infoCoin[curr.coin].ask;
-      acc += subTotal;
-      return acc;
+    const reduceExpense = expense.reduce((previousValue, currentValue) => {
+      const subTotal = currentValue.value * currentValue.infoCoin[currentValue.coin].ask;
+      previousValue += subTotal;
+      return previousValue;
     }, 0);
     return parseFloat(reduceExpense).toFixed(2);
   };

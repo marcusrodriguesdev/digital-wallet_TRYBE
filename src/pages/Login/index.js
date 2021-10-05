@@ -2,6 +2,10 @@ import PropTypes from 'prop-types';
 import React, { useContext, useState } from 'react';
 import Input from '../../components/InputsForm/Input';
 import WalletContext from '../../context/WalletContext';
+import GlobalStyle from '../../styles/GlobalStyle';
+import {
+  Container, Form, ContainerButton, Footer,
+} from './styles';
 
 export default function Login({ history }) {
   const { email, setEmail } = useContext(WalletContext);
@@ -22,15 +26,19 @@ export default function Login({ history }) {
 
   function submitLogin() {
     localStorage.setItem('user', JSON.stringify({ email }));
-    history.push('/carteira');
     localStorage.setItem('exchangeRates', JSON.stringify([]));
+    history.push('/carteira');
   }
 
   return (
-    <div>
-      Login
-      <div>
+    <Container>
+      <GlobalStyle />
+      <Form>
+        <div className="container-title">
+          <h2>Digital Wallet</h2>
+        </div>
         <Input
+          className="Input"
           type="text"
           name="email"
           value={email}
@@ -43,6 +51,7 @@ export default function Login({ history }) {
         />
         <Input
           type="password"
+          className="Input"
           name="password"
           placeholder="Digite sua senha"
           id="password"
@@ -52,15 +61,29 @@ export default function Login({ history }) {
             checkPassword();
           }}
         />
-        <button
-          type="button"
-          disabled={!validated || !checkEmail()}
-          onClick={() => submitLogin()}
+        <ContainerButton
+          validated={validated}
         >
-          Entrar
-        </button>
-      </div>
-    </div>
+          <button
+            type="button"
+            disabled={!validated || !checkEmail()}
+            onClick={() => submitLogin()}
+          >
+            Entrar
+          </button>
+        </ContainerButton>
+      </Form>
+      <Footer>
+        <br />
+        <a
+          href="https://github.com/marcusrodriguesdev"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Desenvolvido por Marcus Rodrigues
+        </a>
+      </Footer>
+    </Container>
   );
 }
 
