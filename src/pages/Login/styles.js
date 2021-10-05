@@ -53,7 +53,7 @@ export const ContainerButton = styled.div`
     font-weight: 600;
     border: none;
     background:
-      ${({ validated }) => validated ? '#49A47A' : '#2d6a4f'};
+      ${({ validated }) => validated ? '#2d6a4f' : '#49A47A'};
     color: white;
     font-size: 1rem;
     height: 52px;
